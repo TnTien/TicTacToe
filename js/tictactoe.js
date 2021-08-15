@@ -41,7 +41,7 @@ function placeXOrO(squareNumber) {
             // This function disables clicking for computer choice
             disableClick();
             // This function waits 1 second before computer places image and enables click
-            setTimeout(function() {computersTurn(), 1000});
+            setTimeout(function() {computersTurn();}, 1000)
         }
         // Returning true is needed for our computersTurn() function to work
         return true;
@@ -52,10 +52,10 @@ function placeXOrO(squareNumber) {
         let success = false;
         // This variable stores a random number 0-8
         let pickASquare;
-        // This condition allows our while loop to keep trying if a wquare is selected already
+        // This condition allows our while loop to keep trying if a square is selected already
         while(!success) {
             // A random number between 0 and 8 is selected
-            pickASqaure = String(Math.floor(Math.random() * 9));
+            pickASquare = String(Math.floor(Math.random() * 9));
             // If the random number evaluated returns true, the square hasn't been selected yet
             if (placeXOrO(pickASquare)) {
                 // This line calls the function
@@ -227,5 +227,4 @@ function resetGame() {
     }
     // This resets our array so it is empty and we can start over
     selectedSquares = [];
-    activePlayer = 'X';
 }
